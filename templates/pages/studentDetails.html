@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!-- https://stackoverflow.com/questions/39327418/how-to-retrieve-data-from-one-to-many-relations-in-django -->
+
+{% block content %}
+
+{% for cc in course %}
+<p>{{cc}}</p>
+{% endfor %}
+
+
+
+
+
+
+
+
+{% endblock %}
