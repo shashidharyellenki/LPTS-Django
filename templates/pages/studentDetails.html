@@ -2,15 +2,75 @@
 <!-- https://stackoverflow.com/questions/39327418/how-to-retrieve-data-from-one-to-many-relations-in-django -->
 
 {% block content %}
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-sm-2">
+            <a href="{% url 'index' %}" class="btn btn-danger">Back</a>
+        </div>
+    </div>
+    <div class="row">
+        
+        
+        <div class="col-sm-4 py-3">
+            <div class="col-sm 12 col-md-3" style="width:20rem">
+                <div class="card mb-3">
+                    {% if student.acadamicYear == 'Alumni' %}
+                    <p class="card-header"><strong>{{student.Name}}</strong><span class="badge bg-warning mx-1">{{student.acadamicYear}}</span></p>
+                    {% endif %}
+                    {% if student.acadamicYear == 'FirstYear' %}
+                    <p class="card-header"><strong>{{student.Name}}</strong><span class="badge bg-primary mx-1">{{student.acadamicYear}}</span></p>
+                    {% endif %}
+                    {% if student.acadamicYear == 'SecondYear' %}
+                    <p class="card-header"><strong>{{student.Name}}</strong><span class="badge bg-success mx-1">{{student.acadamicYear}}</span></p>
+                    {% endif %}
+                    <div class="card-body">
+                      <h6 class="card-subtitle text-muted">{{student.specalization}}</h6>
+                    </div>
+                    <img src="{{student.Image.url}}" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <p class="card-text card-bio">{{student.bio}}</p>
+                      <!-- <a href="#" class="btn btn-secondary btn-sm" style="width:80px; font-size:14px; font-weight:bold; background-color: #292b2c;">More</a> -->
+                    </div>
+                    <div class="card-footer text-muted text-muted-footer">
+        
+                      <p style="font-size:13px; padding:0; margin:0;">
+                      <strong>{{student.Email}} </strong>  </p>  
+                      
+                    </div>
+                  </div>
+               </div> 
+        </div>
+       <div class="col-sm-7">
+           <div class="py-3">
+               <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Course Name</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Remarks</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for course in studentData %}
+                        <tr>
+                            <td scope="row">{{course.courseName}}</td>
+                            <td scope="row">{{course.marks}}</td>
+                            <td scope="row">{{course.remarks}}</td>
+                            {% if course.status == 'Complete' %}
+                            <td scope="row"><span class="badge bg-success">{{course.status}}</span></td>
+                            {% else %}
+                            <td scope="row"><span class="badge bg-danger">{{course.status}}</span></td>
 
-{% for cc in course %}
-<p>{{cc}}</p>
-{% endfor %}
-
-
-
-
-
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+               </table>
+           </div>
+       </div>
+    </div>
+</div>
 
 
 

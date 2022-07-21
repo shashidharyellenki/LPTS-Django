@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from . models import StudentCard, course
 # Create your views here.
 def index(request):
-    student = StudentCard.objects.all()
+    student = StudentCard.objects.all() # stroing all the data from the database into student varibale
     #filter by Name
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']
@@ -30,14 +30,4 @@ def index(request):
 
 
 def student(request, student_id):
-    courses = course.objects.all()
-    student = get_object_or_404(StudentCard, pk=student_id)
-    print(student)
-    res = courses.filter(studentKey=student)
-    print(res,'**********************************************')
-    context={
-        
-        'student':student,
-        'course':res
-    }
-    return render(request, 'pages/studentDetails.html', context)
+    return render(request, 'pages/index.html')

@@ -1,4 +1,3 @@
-from tokenize import blank_re
 from django.db import models
 
 # Create your models here.
@@ -25,18 +24,18 @@ class StudentCard(models.Model):
     Image = models.ImageField(blank=False)
 
     def __str__(self):
-        return self.Name
+        return self.RollNumber
 
 class course(models.Model):
-    studentKey = models.ManyToManyField(StudentCard)
+    studentKey = models.ForeignKey(StudentCard, on_delete=models.DO_NOTHING)
     courseName = models.CharField(max_length=50, blank=False)
     marks = models.IntegerField()
     remarks = models.TextField(max_length=200)
-    statusChoice = [
+    statusChoicee = [
         ('Complete','Complete'),
         ('Incomplete', 'Incomplete')
     ]
-    status = models.CharField(max_length=50, choices=statusChoice, blank=False)
+    status = models.CharField(max_length=50, choices=statusChoicee, blank=False)
     courseEnrolledDate = models.DateField(auto_now_add=True)
     courseDuration = models.IntegerField()
     courseTypeChoice=[

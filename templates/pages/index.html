@@ -22,12 +22,14 @@
             <img src="{{stud.Image.url}}" class="card-img-top" alt="">
             <div class="card-body">
               <p class="card-text card-bio">{{stud.bio}}</p>
-              <a href="{% url 'index' %}" class="btn btn-secondary btn-sm" style="width:80px; font-size:14px; font-weight:bold; background-color: #292b2c;">More </a>
+              <a href="{% url 'student' stud.id %}" class="btn btn-secondary btn-sm">More</a>
             </div>
             <div class="card-footer text-muted text-muted-footer">
 
               <p style="font-size:13px; padding:0; margin:0;">
-              <strong>{{stud.Email}} </strong>  </p>  
+              <strong>{{stud.Email}} </strong> 
+              
+            </p>  
               
             </div>
           </div>
