@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'students_Directory_page',
+    'NewUserRegistrationForm',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

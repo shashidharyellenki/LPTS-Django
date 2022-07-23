@@ -24,7 +24,7 @@ class StudentCard(models.Model):
     Image = models.ImageField(blank=False)
 
     def __str__(self):
-        return self.RollNumber
+        return self.Name
 
 class course(models.Model):
     studentKey = models.ForeignKey(StudentCard, on_delete=models.DO_NOTHING)
@@ -51,8 +51,4 @@ class course(models.Model):
         return self.courseName
 
 
-
-
-
-# course Models
 

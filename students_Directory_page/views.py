@@ -30,4 +30,14 @@ def index(request):
 
 
 def student(request, student_id):
-    return render(request, 'pages/index.html')
+    # storing all the data in the variable
+    data = course.objects.all()
+    print(data)
+    filterData = data.filter(studentKey_id=student_id)
+    # profile = data.filter(StudentCard__id=student_id)
+    # print(profile)
+    context ={
+        'studentData':filterData,
+        # 'profile':profile
+    }
+    return render(request, 'pages/studentDetails.html', context)

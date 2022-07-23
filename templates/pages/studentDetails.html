@@ -14,27 +14,27 @@
         <div class="col-sm-4 py-3">
             <div class="col-sm 12 col-md-3" style="width:20rem">
                 <div class="card mb-3">
-                    {% if student.acadamicYear == 'Alumni' %}
-                    <p class="card-header"><strong>{{student.Name}}</strong><span class="badge bg-warning mx-1">{{student.acadamicYear}}</span></p>
+                    {% if profile.acadamicYear == 'Alumni' %}
+                    <p class="card-header"><strong>{{profile.Name}}</strong><span class="badge bg-warning mx-1">{{profile.acadamicYear}}</span></p>
                     {% endif %}
-                    {% if student.acadamicYear == 'FirstYear' %}
-                    <p class="card-header"><strong>{{student.Name}}</strong><span class="badge bg-primary mx-1">{{student.acadamicYear}}</span></p>
+                    {% if profile.acadamicYear == 'FirstYear' %}
+                    <p class="card-header"><strong>{{profile.Name}}</strong><span class="badge bg-primary mx-1">{{profile.acadamicYear}}</span></p>
                     {% endif %}
-                    {% if student.acadamicYear == 'SecondYear' %}
-                    <p class="card-header"><strong>{{student.Name}}</strong><span class="badge bg-success mx-1">{{student.acadamicYear}}</span></p>
+                    {% if profile.acadamicYear == 'SecondYear' %}
+                    <p class="card-header"><strong>{{profile.Name}}</strong><span class="badge bg-success mx-1">{{profile.acadamicYear}}</span></p>
                     {% endif %}
                     <div class="card-body">
-                      <h6 class="card-subtitle text-muted">{{student.specalization}}</h6>
+                      <h6 class="card-subtitle text-muted">{{profile.specalization}}</h6>
                     </div>
-                    <img src="{{student.Image.url}}" class="card-img-top" alt="">
+                    <img src="{{profile.Image.url}}" class="card-img-top" alt="">
                     <div class="card-body">
-                      <p class="card-text card-bio">{{student.bio}}</p>
+                      <p class="card-text card-bio">{{profile.bio}}</p>
                       <!-- <a href="#" class="btn btn-secondary btn-sm" style="width:80px; font-size:14px; font-weight:bold; background-color: #292b2c;">More</a> -->
                     </div>
                     <div class="card-footer text-muted text-muted-footer">
         
                       <p style="font-size:13px; padding:0; margin:0;">
-                      <strong>{{student.Email}} </strong>  </p>  
+                      <strong>{{profile.Email}} </strong>  </p>  
                       
                     </div>
                   </div>
