@@ -3,3 +3,8 @@ index.html is the first page is used as directory page
 
 shashidhar - username
 shashidhar502 - password
+
+
+
+projectFolder=LPTS
+apps=[students_Directory_page, NewUserRegistrationForm]
