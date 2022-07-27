@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 
 from . models import StudentCard, course
+
+from NewUserRegistrationForm.models import Register
 # Create your views here.
 def index(request):
     student = StudentCard.objects.all() # stroing all the data from the database into student varibale
@@ -32,12 +34,11 @@ def index(request):
 def student(request, student_id):
     # storing all the data in the variable
     data = course.objects.all()
-    print(data)
-    filterData = data.filter(studentKey_id=student_id)
-    # profile = data.filter(StudentCard__id=student_id)
-    # print(profile)
+    filterData = data.filter(studentKey__id=student_id)
+    profile = StudentCard.objects.all().filter(id=student_id)
+    print(profile,"*******************")
     context ={
         'studentData':filterData,
-        # 'profile':profile
+        'profile':profile
     }
     return render(request, 'pages/studentDetails.html', context)

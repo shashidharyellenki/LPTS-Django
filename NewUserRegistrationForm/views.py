@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.contrib import auth
 
 # Create your views here.
-def index(request):
+def indexx(request):
     if request.method=='POST':
         FirstName = request.POST['FirstName']
         LastName = request.POST['LastName']

@@ -6,5 +6,5 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('students_Directory_page.urls')),
-    path('', include('NewUserRegistrationForm.urls'))
+    path('Reg/', include('NewUserRegistrationForm.urls'))
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
